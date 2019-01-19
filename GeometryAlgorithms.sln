@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_vector_projection", "02_vector_projection\02_vector_projection.csproj", "{FD0BD1F4-203D-4A1A-9BD5-2752A1FA5AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_ray_sphere_intersect", "03_ray_sphere_intersect\03_ray_sphere_intersect.csproj", "{C029F74C-A4B1-4989-8CB0-541141659D1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_ray_sphere_intersect", "03_ray_sphere_intersect\03_ray_sphere_intersect.csproj", "{C029F74C-A4B1-4989-8CB0-541141659D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_random_unit_vector_in_hemisphere", "04_random_unit_vector_in_hemisphere\04_random_unit_vector_in_hemisphere.csproj", "{A1B52A9F-40AA-44D1-843C-32371530F7EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C029F74C-A4B1-4989-8CB0-541141659D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C029F74C-A4B1-4989-8CB0-541141659D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C029F74C-A4B1-4989-8CB0-541141659D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B52A9F-40AA-44D1-843C-32371530F7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B52A9F-40AA-44D1-843C-32371530F7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B52A9F-40AA-44D1-843C-32371530F7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B52A9F-40AA-44D1-843C-32371530F7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
