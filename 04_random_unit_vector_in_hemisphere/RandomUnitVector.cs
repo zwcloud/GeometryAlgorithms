@@ -40,7 +40,7 @@ namespace _04_random_unit_vector_in_hemisphere
         {
             a = Vector3.Normalize(a);
             b = Vector3.Normalize(b);
-            var axis = Vector3.Normalize(Vector3.Cross(b, a));
+            var axis = Vector3.Normalize(Vector3.Cross(a, b));
             var angle = AngleBetween(a, b);
             var quaternion = Quaternion.CreateFromAxisAngle(axis, angle);
             return Vector3.Transform(p, quaternion);
@@ -50,9 +50,8 @@ namespace _04_random_unit_vector_in_hemisphere
         public static Vector3 RandomUnitVectorInHemisphereOf(Vector3 dir)
         {
             var p = RandomUnitVectorOnNorthernHemisphere();
-            //var p = new Vector3(-1,0,0);
             //now p is distributed around the north unit vector: Vector3.UnitY
-            p = RotateUnitVector(p, Vector3.Normalize(dir), Vector3.UnitY);//rotate the vector to make it surround dir
+            p = RotateUnitVector(p, Vector3.UnitY, Vector3.Normalize(dir));//rotate the vector to make it surround dir
             //now p is distributed around dir
             return p;
         }
