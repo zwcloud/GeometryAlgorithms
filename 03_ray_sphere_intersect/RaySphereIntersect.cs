@@ -37,7 +37,8 @@ namespace _03_ray_sphere_intersect
             }
             var dIA = MathF.Sqrt(r * r - dCA * dCA);
             var dPA = PA.Length();
-            var dPI = dPA - dIA;
+            var dPC = PC.Length();
+            var dPI = (dPC > r) ? (dPA - dIA) : (dPA + dIA);
             I = P + Vector3.Normalize(d) * dPI;
             var CI = I - C;
             n = CI / r;//normalized
@@ -95,6 +96,27 @@ namespace _03_ray_sphere_intersect
             var rayDirection = Vector3.Normalize(new Vector3(-0.6844067f, 0.007565523f, -0.7290612f));
             var expectedPoint = new Vector3(475.4838f, 189.7088f, 175.5929f);
             var expectedNormal = Vector3.Normalize(new Vector3(0.5354838f, 0.1732088f, 0.8265929f));
+
+            var hit = Intersect(sphereCenter, sphereRadius, rayOrigin, rayDirection, out var I, out var n);
+
+            Assert.True(hit);
+            Assert.Equal(expectedPoint.X, I.X, 3);
+            Assert.Equal(expectedPoint.Y, I.Y, 3);
+            Assert.Equal(expectedPoint.Z, I.Z, 3);
+            Assert.Equal(expectedNormal.X, n.X, 3);
+            Assert.Equal(expectedNormal.Y, n.Y, 3);
+            Assert.Equal(expectedNormal.Z, n.Z, 3);
+        }
+
+        [Fact]
+        public void RunIntersect4()
+        {
+            var sphereCenter = new Vector3(-60f,16.5f,-651f);
+            var sphereRadius = 1000f;
+            var rayOrigin = sphereCenter;
+            var rayDirection = new Vector3(1, 0, 0);
+            var expectedPoint = new Vector3(sphereCenter.X + sphereRadius, sphereCenter.Y, sphereCenter.Z);
+            var expectedNormal = rayDirection;
 
             var hit = Intersect(sphereCenter, sphereRadius, rayOrigin, rayDirection, out var I, out var n);
 
