@@ -38,7 +38,7 @@ namespace _03_ray_sphere_intersect
             var dIA = MathF.Sqrt(r * r - dCA * dCA);
             var dPA = PA.Length();
             var dPC = PC.Length();
-            var dPI = (dPC > r) ? (dPA - dIA) : (dPA + dIA);
+            var dPI = (dPC-r>0.001) ? (dPA - dIA) : (dPA + dIA); //compared with 0.001 to exclude P from the intersection
             I = P + Vector3.Normalize(d) * dPI;
             var CI = I - C;
             n = CI / r;//normalized
